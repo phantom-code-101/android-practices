@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MySorting</string>
+    <string name="load_currency_data">Go</string>
+    <string name="sort_by_name">Sort By Name</string>
+    <string name="sort_by_length">Sort By Length</string>
+    <string name="currency_list_search_hints">CRYPTOCURRENCY</string>
+</resources>

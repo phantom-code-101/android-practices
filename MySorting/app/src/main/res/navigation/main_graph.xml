@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/currencyListFragment">
+
+    <action
+        android:id="@id/currencyListFragment"
+        app:destination="@id/currencyListFragment"
+        app:popUpTo="@id/currencyListFragment"
+        app:popUpToInclusive="true"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/currencyListFragment"
+        android:name="com.demo.mysorting.ui.currency.CurrencyListFragment"
+        android:label="CurrencyListFragment">
+
+        <argument
+            android:name="currency_list"
+            android:defaultValue="@null"
+            app:argType="com.demo.mysorting.database.CurrencyInfo[]"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

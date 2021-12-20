@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.demo.mysorting.ui.home.HomeViewModel" />
+
+        <variable
+            name="isLoading"
+            type="boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.DemoActivity">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/main_content"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_graph" />
+
+        <ImageButton
+            android:id="@+id/btnLoadData"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/go_button"
+            android:src="@drawable/ic_load_data_36dp"
+            android:text="@string/load_currency_data"
+            android:visibility="@{ isLoading || viewmodel.sortingIsEnable ? View.GONE : View.VISIBLE, default=visible }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="@{ isLoading ? View.VISIBLE : View.GONE, default=gone }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnSorting"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/go_button"
+            android:contentDescription="@string/sort_by_name"
+            android:src="@drawable/ic_filter_list_white_24dp"
+            android:visibility="@{ viewmodel.sortingIsEnable ? View.VISIBLE : View.GONE, default=gone }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
