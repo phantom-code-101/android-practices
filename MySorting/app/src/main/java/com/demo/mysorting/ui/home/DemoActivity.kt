@@ -22,7 +22,6 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.subjects.PublishSubject
 import org.koin.android.ext.android.get
 import java.util.concurrent.TimeUnit
-import kotlin.random.Random
 
 class DemoActivity : BaseActivity(), OnActivityDelegate {
 
@@ -85,7 +84,7 @@ class DemoActivity : BaseActivity(), OnActivityDelegate {
         }
 
         binding.btnSorting.setOnClickListener {
-            val sortBy = if(sortByToggle) PageConstants.Sorting.BY_NAME else PageConstants.Sorting.BY_LENGTH
+            val sortBy = if (sortByToggle) PageConstants.Sorting.BY_NAME else PageConstants.Sorting.BY_LENGTH
             sortPublish.onNext(sortBy)
         }
     }
