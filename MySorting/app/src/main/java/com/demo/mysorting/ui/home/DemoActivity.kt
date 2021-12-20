@@ -48,7 +48,7 @@ class DemoActivity : BaseActivity(), OnActivityDelegate {
         setDatabase()
         setListener()
         setAnimation()
-        setSortingDispose()
+        setSortingPublish()
     }
 
     private fun setDatabase() {
@@ -89,7 +89,7 @@ class DemoActivity : BaseActivity(), OnActivityDelegate {
         }
     }
 
-    private fun setSortingDispose() {
+    private fun setSortingPublish() {
         sortPublish
             .debounce(200, TimeUnit.MILLISECONDS)
             .subscribeOn(AndroidSchedulers.mainThread())
