@@ -25,7 +25,6 @@ import java.util.concurrent.TimeUnit
 
 class DemoActivity : BaseActivity(), OnActivityDelegate {
 
-    private val TAG = "DemoActivity"
     private lateinit var binding: ActivityMainBinding
     private val sortButtonAnimatorSet = AnimatorSet()
     private val sortPublish: PublishSubject<String> = PublishSubject.create()
