@@ -43,6 +43,25 @@ class CurrencyListFragment : BaseFragment(), OnFragmentDelegate {
                 binding.rvCurrencyList.scrollToPosition(0)
             }
         }
+
+        binding.rvCurrencyList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+            private var scrollDy = 0
+            private var scrollDx = 0
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                getScrollingDelegate()?.onScrollingInfo(dx, dy, scrollDx, scrollDy)
+                scrollDx = dx
+                scrollDy = dy
+            }
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                binding.searchContainer.isSelected = scrollDy > 0
+                getScrollingDelegate()?.onScrollingState(newState)
+            }
+        })
     }
 
     private fun setLayout() {

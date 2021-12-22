@@ -40,9 +40,6 @@ class CurrencyListAdapter : ListAdapter<CurrencyInfo, CurrencyListAdapter.Curren
     override fun onBindViewHolder(holder: CurrencyItem, position: Int) {
         val currencyInfo = getItem(position)
         holder.bindTo(currencyInfo)
-        holder.itemView.safeOnClickListener {
-            clickCallback?.invoke(currencyInfo)
-        }
     }
 
     inner class CurrencyItem(
@@ -52,6 +49,9 @@ class CurrencyListAdapter : ListAdapter<CurrencyInfo, CurrencyListAdapter.Curren
             binding.setCoinId(currencyInfo.id.substring(0, 1))
             binding.setCoinName(currencyInfo.name)
             binding.setCoinSymbol(currencyInfo.symbol)
+            binding.container.safeOnClickListener {
+                clickCallback?.invoke(currencyInfo)
+            }
         }
     }
 

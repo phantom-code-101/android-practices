@@ -11,7 +11,6 @@ import com.demo.mysorting.R
 import com.demo.mysorting.base.BaseActivity
 import com.demo.mysorting.database.CurrencyInfo
 import com.demo.mysorting.databinding.ActivityMainBinding
-import com.demo.mysorting.delegate.OnActivityDelegate
 import com.demo.mysorting.extensions.jsonFromAsset
 import com.demo.mysorting.extensions.safeOnClickListener
 import com.demo.mysorting.model.Result
@@ -23,7 +22,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import org.koin.android.ext.android.get
 import java.util.concurrent.TimeUnit
 
-class DemoActivity : BaseActivity(), OnActivityDelegate {
+class DemoActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val sortButtonAnimatorSet = AnimatorSet()
@@ -66,7 +65,8 @@ class DemoActivity : BaseActivity(), OnActivityDelegate {
                     binding.isLoading = false
                     sortButtonAnimatorSet.start()
 
-                    val action = CurrencyListFragmentDirections.currencyListFragment(currencyList = result.data)
+                    val action =
+                        CurrencyListFragmentDirections.currencyListFragment(currencyList = result.data)
                     getNavController()?.navigate(action)
 
                 }
@@ -83,7 +83,8 @@ class DemoActivity : BaseActivity(), OnActivityDelegate {
         }
 
         binding.btnSorting.setOnClickListener {
-            val sortBy = if (sortByToggle) PageConstants.Sorting.BY_NAME else PageConstants.Sorting.BY_LENGTH
+            val sortBy =
+                if (sortByToggle) PageConstants.Sorting.BY_NAME else PageConstants.Sorting.BY_LENGTH
             sortPublish.onNext(sortBy)
         }
     }
