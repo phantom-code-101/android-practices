@@ -5,7 +5,6 @@ import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import com.demo.mysorting.R
 import com.demo.mysorting.base.BaseActivity
@@ -19,7 +18,7 @@ import com.demo.mysorting.utils.PageConstants
 import com.google.gson.reflect.TypeToken
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.subjects.PublishSubject
-import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 import java.util.concurrent.TimeUnit
 
 class DemoActivity : BaseActivity() {
@@ -29,9 +28,7 @@ class DemoActivity : BaseActivity() {
     private val sortPublish: PublishSubject<String> = PublishSubject.create()
     private var sortByToggle = false
 
-    private val homeViewModel: HomeViewModel by viewModels {
-        get<HomeModelFactory>()
-    }
+    private val homeViewModel: HomeViewModel by inject()
 
     override fun getNavControllerLayoutId(): Int = R.id.main_content
 

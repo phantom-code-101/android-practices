@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,10 +11,11 @@ import com.demo.mysorting.base.BaseFragment
 import com.demo.mysorting.databinding.CurrencyListFragmentBinding
 import com.demo.mysorting.delegate.OnFragmentDelegate
 import com.demo.mysorting.utils.PageConstants
+import org.koin.android.ext.android.inject
 
 class CurrencyListFragment : BaseFragment(), OnFragmentDelegate {
 
-    private val currencyListViewModel: CurrencyListViewModel by viewModels()
+    private val currencyListViewModel: CurrencyListViewModel by inject()
 
     private val args: CurrencyListFragmentArgs by navArgs()
     private var _binding: CurrencyListFragmentBinding? = null
