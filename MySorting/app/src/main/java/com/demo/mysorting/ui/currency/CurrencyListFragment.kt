@@ -100,7 +100,7 @@ class CurrencyListFragment : BaseFragment(), OnFragmentDelegate {
         currencyListViewModel.stop()
 
         // Avoid memory leak when the fragment be destroy.
-        // The LiveData just trigger the onCreate or onDestroy
+        // The LiveData sole activate both onCreateView and onDestroyView
         // when bound the viewLifecycleOwner with fragment cycle
         _binding = null
     }
