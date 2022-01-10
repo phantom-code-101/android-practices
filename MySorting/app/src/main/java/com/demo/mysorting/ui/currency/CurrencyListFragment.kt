@@ -38,6 +38,8 @@ class CurrencyListFragment : BaseFragment(), OnFragmentDelegate {
     }
 
     private fun setListener() {
+        // viewLifecycleOwner : onCreateView, onDestroyView
+        // LifecycleOwner : onCreate, onDestroy
         currencyListViewModel.currencyInfoList.observe(viewLifecycleOwner) {
             currencyListAdapter.submitList(it) {
                 binding.rvCurrencyList.scrollToPosition(0)
@@ -93,9 +95,13 @@ class CurrencyListFragment : BaseFragment(), OnFragmentDelegate {
         args.currencyList?.toList()?.also { currencyListViewModel.sorting(sortBy, it) }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         currencyListViewModel.stop()
+
+        // Avoid memory leak when the fragment be destroy.
+        // The LiveData just trigger the onCreate or onDestroy
+        // when bound the viewLifecycleOwner with fragment cycle
         _binding = null
     }
 }
