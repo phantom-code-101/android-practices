@@ -19,11 +19,15 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp">
+        android:outlineProvider="bounds"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="15dp"
+        android:stateListAnimator="@animator/anim_currency_list_item">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/coinId"
