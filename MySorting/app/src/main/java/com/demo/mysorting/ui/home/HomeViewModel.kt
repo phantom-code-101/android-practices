@@ -1,5 +1,6 @@
 package com.demo.mysorting.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,9 +45,11 @@ class HomeViewModel(private val dataSource: CurrencyDao) : ViewModel() {
         currencyInfoList ?: return
 
         disposable.add(
-            Completable.fromCallable { dataSource.setup(currencyInfoList) }
+            Completable.fromAction { dataSource.setup(currencyInfoList) }
                 .subscribeOn(Schedulers.io())
-                .subscribe()
+                .subscribe({}, {
+                    Log.e("HomeViewModel", "Database Error!", it)
+                })
         )
     }
 

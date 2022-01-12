@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/coinId"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="B" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/coinName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="MCD" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/rightArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

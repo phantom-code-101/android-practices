@@ -25,6 +25,7 @@ internal class CurrencyListAdapter : ListAdapter<CurrencyInfo, CurrencyItem>(DIF
 
     }
 
+    private val viewPool: RecyclerView.RecycledViewPool = RecyclerView.RecycledViewPool()
     private var clickCallback: ((CurrencyInfo) -> Unit)? = null
 
     fun setCurrencyItemClick(callback: ((CurrencyInfo) -> Unit)?) {
@@ -32,9 +33,16 @@ internal class CurrencyListAdapter : ListAdapter<CurrencyInfo, CurrencyItem>(DIF
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyItem {
-        val itemBinding =
-            RowCurrencyListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CurrencyItem(itemBinding)
+        val view = viewPool.getRecycledView(viewType) ?: run {
+            val itemBinding = CurrencyItem(
+                RowCurrencyListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            )
+
+            viewPool.putRecycledView(itemBinding)
+            itemBinding
+        }
+
+        return view as CurrencyItem
     }
 
     override fun onBindViewHolder(holder: CurrencyItem, position: Int) {

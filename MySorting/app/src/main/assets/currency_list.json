@@ -68,5 +68,90 @@
     "id": "USDC",
     "name": "USD Coin",
     "symbol": "USDC"
+  },
+  {
+    "id": "VET",
+    "name": "VeChain",
+    "symbol": "VET"
+  },
+  {
+    "id": "FTT",
+    "name": "FTX Token",
+    "symbol": "FTX"
+  },
+  {
+    "id": "SHIB",
+    "name": "Shiba Inu",
+    "symbol": "SHIB"
+  },
+  {
+    "id": "SAND",
+    "name": "The Sandbox",
+    "symbol": "SAND"
+  },
+  {
+    "id": "DOT",
+    "name": "Polkadot",
+    "symbol": "DOT"
+  },
+  {
+    "id": "AVAX",
+    "name": "Avalanche",
+    "symbol": "AVAX"
+  },
+  {
+    "id": "DOGE",
+    "name": "Dogecoin",
+    "symbol": "DOGE"
+  },
+  {
+    "id": "ENJ",
+    "name": "Enjin Coin",
+    "symbol": "ENJ"
+  },
+  {
+    "id": "ATOM",
+    "name": "Cosmos",
+    "symbol": "ATOM"
+  },
+  {
+    "id": "TRX",
+    "name": "TRON",
+    "symbol": "TRX"
+  },
+  {
+    "id": "XLM",
+    "name": "Stellar",
+    "symbol": "XLM"
+  },
+  {
+    "id": "FTM",
+    "name": "Fantom",
+    "symbol": "FTM"
+  },
+  {
+    "id": "MANA",
+    "name": "Decentraland",
+    "symbol": "MANA"
+  },
+  {
+    "id": "DASH",
+    "name": "Dash",
+    "symbol": "DASH"
+  },
+  {
+    "id": "CHZ",
+    "name": "Chiliz",
+    "symbol": "CHZ"
+  },
+  {
+    "id": "WAVES",
+    "name": "Waves",
+    "symbol": "Waves"
+  },
+  {
+    "id": "HT",
+    "name": "Huobi Token",
+    "symbol": "HT"
   }
 ]
