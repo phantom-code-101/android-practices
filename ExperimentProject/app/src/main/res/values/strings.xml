@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ExperimentProject</string>
+    <string name="title_feed">Feed Module</string>
+    <string name="title_profile">Profile Module</string>
+    <string name="title_shared">Shared Module</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

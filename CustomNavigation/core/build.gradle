@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+
+        testInstrumentationRunner "com.demo.core.utils.MockTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        androidTest {
+            java.srcDirs += "src/sharedTest/java"
+        }
+        test {
+            java.srcDirs += "src/sharedTest/java"
+        }
+    }
+}
+
+dependencies {
+
+    api deps.kotlinStdlib
+    api deps.androidxCore
+    api deps.androidxAppcompat
+    api deps.material
+    api deps.constraintlayout
+
+    // Testing Kit
+    testImplementation deps.junit
+    testImplementation deps.androidxTestingCore
+    testImplementation deps.testMonitor
+    testImplementation deps.testRunner
+    testImplementation deps.coroutineTest
+    testImplementation deps.fragmentTest
+
+    // UI Kit : navigation component
+    api deps.fragmentKtx
+    api deps.navigationUiKtx
+    api deps.gson
+    api deps.retrofit
+    api deps.retrofitConverterGson
+    api deps.okhttpLoggging
+    api deps.okhttpMockServer
+
+}
