@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/landing"
+        android:title="Home"
+        android:icon="@drawable/ic_menu_home"/>
+    <item
+        android:id="@+id/markets"
+        android:title="Markets"
+        android:icon="@drawable/ic_menu_marketing"/>
+    <item
+        android:id="@+id/trading"
+        android:title="Trading"
+        android:icon="@drawable/ic_menu_trading"/>
+    <item
+        android:id="@+id/liquidassets"
+        android:title="Assets"
+        android:icon="@drawable/ic_menu_assets"/>
+</menu>

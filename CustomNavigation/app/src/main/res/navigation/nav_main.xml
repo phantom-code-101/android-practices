@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+<!--    <fragment-->
+<!--        android:id="@+id/demoFragment"-->
+<!--        android:name="com.demo.navshoworhide.demo.DemoFragment"-->
+<!--        android:label="Demo Page"-->
+<!--        tools:layout="@layout/fragment_demo" />-->
+
+    <PersistentFragment
+        android:id="@+id/homeFragment"
+        android:name="com.demo.landing.ui.HomeFragment"
+        android:label="Home" />
+
+    <PersistentFragment
+        android:id="@+id/liquidassetsFragment"
+        android:name="com.demo.liquidassets.ui.LiquidAssetsFragment"
+        android:label="Liquid Assets" />
+
+    <PersistentFragment
+        android:id="@+id/marketsFragment"
+        android:name="com.demo.markets.ui.MarketFragment"
+        android:label="Markets" />
+
+    <PersistentFragment
+        android:id="@+id/tradingFragment"
+        android:name="com.demo.trading.ui.TradingFragment"
+        android:label="Trading" />
+
+</navigation>
